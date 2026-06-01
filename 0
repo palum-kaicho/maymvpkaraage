@@ -74,21 +74,24 @@ canvas{
   margin-right:10px;
 }
 
+/* ★アニメーションの挙動が安定するように0%と100%を修正 */
 @keyframes popup{
-
+  0%{
+    opacity:0;
+    transform:translateY(-20px);
+  }
   15%{
     opacity:1;
     transform:translateY(0);
   }
-
   85%{
     opacity:1;
+    transform:translateY(0);
   }
-
   100%{
     opacity:0;
+    transform:translateY(0);
   }
-
 }
 
 h1{
@@ -214,23 +217,23 @@ footer h3{
   font-size:clamp(2rem,5vw,3rem);
 }
 
+/* ★スクロールフェードイン用に、初期状態を透明＆下ズレに修正 */
 .reveal{
-  opacity:1;
-  transform:none;
+  opacity:0;
+  transform:translateY(30px);
   transition:2s ease;
 }
 
+/* ★JS等で「.show」がついた時にフワッと表示される */
 .reveal.show{
   opacity:1;
-  transform:none;
+  transform:translateY(0);
 }
 
 @media(max-width:768px){
-
   .popup{
     width:90%;
     left:5%;
     text-align:center;
   }
-
 }
