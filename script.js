@@ -1,23 +1,37 @@
-// script.js
 
 const bgm = document.getElementById("bgm");
 const musicBtn = document.getElementById("musicBtn");
-const notification = document.getElementById("notification");
-const envelopeSe = document.getElementById("envelopeSe");
+const notificationAudio = document.getElementById("notification");
 
 setTimeout(()=>{
 
-  notification?.play();
+  if(notificationAudio){
+
+    notificationAudio.volume = 0.7;
+
+    notificationAudio.play().catch(()=>{});
+
+  }
 
 },2000);
 
-musicBtn.addEventListener("click",()=>{
+musicBtn.addEventListener("click", async ()=>{
 
-  bgm.volume = 0.5;
+  try{
 
-  bgm.play();
+    bgm.volume = 0.45;
 
-  musicBtn.style.opacity = .3;
+    await bgm.play();
+
+    musicBtn.innerText = "BGM PLAYING";
+
+    musicBtn.style.opacity = .45;
+
+  }catch(err){
+
+    console.log(err);
+
+  }
 
 });
 
@@ -34,7 +48,7 @@ const observer = new IntersectionObserver((entries)=>{
   });
 
 },{
-  threshold:.25
+  threshold:.2
 });
 
 document.querySelectorAll(
@@ -61,15 +75,15 @@ window.addEventListener("resize",resize);
 
 const particles = [];
 
-for(let i=0;i<80;i++){
+for(let i=0;i<65;i++){
 
   particles.push({
 
     x:Math.random()*canvas.width,
     y:Math.random()*canvas.height,
     size:Math.random()*2+1,
-    speed:Math.random()*.3+.05,
-    opacity:Math.random()
+    speed:Math.random()*.25+.03,
+    opacity:Math.random()*.8
 
   });
 
@@ -83,10 +97,10 @@ function animate(){
 
     ctx.beginPath();
 
-    ctx.fillStyle=`rgba(255,225,120,${p.opacity})`;
+    ctx.fillStyle=`rgba(255,225,140,${p.opacity})`;
 
-    ctx.shadowBlur=20;
-    ctx.shadowColor="#ffe7a3";
+    ctx.shadowBlur=18;
+    ctx.shadowColor="#ffe9a8";
 
     ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 
