@@ -1,47 +1,23 @@
 // script.js
 
-const bgm = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
-const notification = document.getElementById("notification");
-const envelopeSE = document.getElementById("envelope");
+const observer = new IntersectionObserver((entries)=>{
 
-setTimeout(()=>{
-  notification.play();
-},2000);
+entries.forEach((entry)=>{
 
-musicBtn.addEventListener("click",()=>{
+```
+if(entry.isIntersecting){
+  entry.target.classList.add("show");
+}
+```
 
-  bgm.volume = 0.5;
-  bgm.play();
-
-  musicBtn.style.opacity = 0;
 });
 
-const observer = new IntersectionObserver(entries=>{
-
-  entries.forEach(entry=>{
-
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-
-  });
-
-},{threshold:.2});
-
-document.querySelectorAll(".timeline-item").forEach(el=>{
-  observer.observe(el);
+},{
+threshold:0.15
 });
 
-const envelopeBtn = document.getElementById("envelopeBtn");
-const letter = document.getElementById("letter");
-
-envelopeBtn.addEventListener("click",()=>{
-
-  envelopeSE.play();
-
-  letter.classList.remove("hidden");
-
+document.querySelectorAll(".fade-section").forEach((el)=>{
+observer.observe(el);
 });
 
 const canvas = document.getElementById("particles");
@@ -49,8 +25,8 @@ const ctx = canvas.getContext("2d");
 
 function resize(){
 
-  canvas.width = innerWidth;
-  canvas.height = innerHeight;
+canvas.width = innerWidth;
+canvas.height = innerHeight;
 
 }
 
@@ -60,64 +36,54 @@ window.addEventListener("resize",resize);
 
 const particles = [];
 
-for(let i=0;i<120;i++){
+for(let i=0;i<70;i++){
 
-  particles.push({
+particles.push({
 
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    size:Math.random()*3+1,
-    speed:Math.random()*0.3+0.1,
-    opacity:Math.random()
+```
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2+1,
+speed:Math.random()*0.2+0.05,
+opacity:Math.random()*0.6
+```
 
-  });
+});
 
 }
 
 function animate(){
 
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+ctx.clearRect(0,0,canvas.width,canvas.height);
 
-  particles.forEach(p=>{
+particles.forEach((p)=>{
 
-    ctx.beginPath();
+```
+ctx.beginPath();
 
-    ctx.fillStyle=`rgba(255,230,120,${p.opacity})`;
+ctx.fillStyle=`rgba(255,220,120,${p.opacity})`;
 
-    ctx.shadowBlur=20;
-    ctx.shadowColor="#ffe8a0";
+ctx.shadowBlur=12;
+ctx.shadowColor="#ffe08a";
 
-    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 
-    ctx.fill();
+ctx.fill();
 
-    p.y -= p.speed;
+p.y -= p.speed;
 
-    if(p.y < 0){
+if(p.y < 0){
 
-      p.y = canvas.height;
-      p.x = Math.random()*canvas.width;
+  p.y = canvas.height;
+  p.x = Math.random()*canvas.width;
 
-    }
+}
+```
 
-  });
+});
 
-  requestAnimationFrame(animate);
+requestAnimationFrame(animate);
 
 }
 
 animate();
-
-window.addEventListener("scroll",()=>{
-
-  const scrolled = window.scrollY;
-
-  document.querySelectorAll(".chapter").forEach((el,index)=>{
-
-    const speed = (index + 1) * 0.03;
-
-    el.style.transform = `translateY(${scrolled * speed * -0.08}px)`;
-
-  });
-
-});
