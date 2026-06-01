@@ -153,30 +153,16 @@ canvas{
 
 }
 
-#musicBtn{
-
-  margin-top:70px;
-
-  background:transparent;
-  border:1px solid rgba(255,255,255,.2);
-
-  color:white;
-
-  padding:14px 28px;
-
-  border-radius:999px;
-
-}
 
 .chapter{
 
-  min-height:100vh;
+  min-height:72vh;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  padding:80px 8vw;
+  padding:42px 7vw;
 }
 
 .text-section p{
@@ -286,12 +272,9 @@ canvas{
 
 .final-message p{
 
-  font-size:clamp(1.8rem,4vw,3rem);
+  margin:0;
 
-  opacity:0;
-  transform:translateY(30px);
-
-  transition:2s;
+  line-height:1.45;
 }
 
 .final-message{
