@@ -1,46 +1,4 @@
-const bgm = document.getElementById("bgm");
-const musicBtn = document.getElementById("musicBtn");
-const notificationAudio = document.getElementById("notification");
 
-window.addEventListener("load",()=>{
-
-  setTimeout(()=>{
-
-    if(notificationAudio){
-
-      notificationAudio.volume = 0.7;
-
-      notificationAudio.play().catch(()=>{});
-
-    }
-
-  },2000);
-
-});
-
-musicBtn.addEventListener("click", async ()=>{
-
-  try{
-
-    bgm.currentTime = 0;
-
-    bgm.volume = 0.5;
-
-    await bgm.play();
-
-    musicBtn.innerText = "BGM PLAYING";
-
-    musicBtn.style.opacity = .5;
-
-  }catch(err){
-
-    alert("bgm.mp3 が読み込めてない可能性があります");
-
-    console.log(err);
-
-  }
-
-});
 
 const observer = new IntersectionObserver((entries)=>{
 
