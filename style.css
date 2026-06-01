@@ -1,6 +1,4 @@
-/* style.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght=200;400;700&display=swap');
 
 *{
   margin:0;
@@ -17,7 +15,8 @@ body{
   color:#f6f1e7;
   font-family:'Noto Serif JP',serif;
   overflow-x:hidden;
-  line-height:2.2;
+  /* ★行間を 2.2 から 1.6 に狭めて見やすく調整 */
+  line-height:1.6;
   letter-spacing:.04em;
 }
 
@@ -117,16 +116,6 @@ h1{
   letter-spacing:4px;
 }
 
-#musicBtn{
-  margin-top:50px;
-  background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.08);
-  color:white;
-  padding:14px 30px;
-  border-radius:999px;
-  cursor:pointer;
-}
-
 .section{
   min-height:100vh;
   display:flex;
@@ -139,13 +128,18 @@ h1{
   max-width:860px;
 }
 
+/* ★文章ごとの間隔が詰まりすぎないよう、段落の下に少し余白を追加 */
 .text-block p{
   font-size:clamp(1.1rem,3vw,2rem);
+  margin-bottom:1.5rem; 
+}
+.text-block p:last-child {
+  margin-bottom: 0;
 }
 
 .big{
   font-size:clamp(1.8rem,5vw,4rem);
-  line-height:1.6;
+  line-height:1.4;
 }
 
 .image-section{
@@ -225,6 +219,37 @@ footer h3{
 .reveal.show{
   opacity:1;
   transform:translateY(0);
+}
+
+/* ★最後の「からあげ棒」用の美しい虹色グラデーション */
+.rainbow-text {
+  background: linear-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff3366),
+    to(#ff9933),
+    to(#33ccff),
+    to(#9933ff),
+    to(#ff3366)
+  );
+  background: linear-gradient(
+    90deg,
+    #ff3366,
+    #ff9933,
+    #33ccff,
+    #9933ff,
+    #ff3366
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: rainbowMove 6s linear infinite; /* ゆるやかに虹色が動くで */
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 @media(max-width:768px){
