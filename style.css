@@ -353,20 +353,23 @@ canvas{
 
 @media(max-width:768px){
 
-.text-section p{
+  .text-section p{
 
-  max-width:760px;
+    max-width:760px;
 
-  text-align:center;
+    text-align:center;
 
-  font-size:clamp(1.05rem,2.4vw,1.55rem);
+    font-size:clamp(1.05rem,2.4vw,1.55rem);
 
-  line-height:1.7;
+    line-height:1.7;
 
-  letter-spacing:-0.03em;
+    letter-spacing:-0.03em;
 
-  opacity:0;
-  transform:translateY(18px);
+opacity:0;
+transform:translateY(24px);
 
-  transition:1.2s;
-}}
+    transition:1.2s;
+
+  }
+
+}
