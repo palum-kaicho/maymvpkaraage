@@ -1,0 +1,245 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>May's Monthly MVP</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<audio id="bgm" loop>
+  <source src="bgm.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="notification">
+  <source src="notification.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="envelope">
+  <source src="envelope.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="particles"></canvas>
+
+<div class="noise"></div>
+<div class="vignette"></div>
+
+<!-- OPENING -->
+<section class="opening">
+
+  <div class="black-screen"></div>
+
+  <div class="popup" id="popup">
+    <span class="dot"></span>
+    からあげ棒さんが入あそびにきました
+  </div>
+
+  <div class="title-wrap">
+    <h1 class="main-title">May's Monthly MVP</h1>
+    <p class="subtitle">Thank you for coloring my May.</p>
+  </div>
+
+  <button id="musicBtn">BGM PLAY</button>
+
+</section>
+
+<!-- CHAPTER 1 -->
+<section class="chapter chapter-center">
+
+  <div class="chapter-number">Chapter 1</div>
+
+  <h2>2026.05</h2>
+
+  <div class="story-text">
+    <p>Palmuで配信を始めて</p>
+    <p>まだ2か月</p>
+
+    <br>
+
+    <p>それでも過去11年で</p>
+    <p>最も濃い1か月だった</p>
+  </div>
+
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="chapter">
+
+  <div class="chapter-number">Chapter 2</div>
+
+  <h2>Story Timeline</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <span></span>
+      <h3>配信開始</h3>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span></span>
+      <h3>出会い</h3>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span></span>
+      <h3>盛り上がり</h3>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span></span>
+      <h3>別れ</h3>
+    </div>
+
+    <div class="timeline-item reveal">
+      <span></span>
+      <h3>再会</h3>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="chapter chapter-image">
+
+  <div class="chapter-number">Chapter 3</div>
+
+  <h2>For Karage</h2>
+
+  <div class="glass-card zoom-image">
+    <img src="mvp5.webp">
+  </div>
+
+</section>
+
+<!-- CHAPTER 4 -->
+<section class="chapter regret">
+
+  <div class="chapter-number">Chapter 4</div>
+
+  <h2>Regret</h2>
+
+  <div class="regret-text">
+    <p>もっとできたんじゃないか</p>
+    <p>もっと向き合えたんじゃないか</p>
+  </div>
+
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="chapter chapter-center">
+
+  <div class="chapter-number">Chapter 5</div>
+
+  <h2>Resolution</h2>
+
+  <div class="story-text">
+    <p>努力量じゃない</p>
+    <p>配信の質でもない</p>
+
+    <br>
+
+    <p>コンテンツの勝負だった</p>
+  </div>
+
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="chapter entertainer">
+
+  <div class="huge-text shake">
+    僕には<br>エンタメしかない
+  </div>
+
+</section>
+
+<!-- CHAPTER 7 -->
+<section class="chapter return-section">
+
+  <div class="return-overlay"></div>
+
+  <div class="popup climax">
+    <span class="dot"></span>
+    からあげ棒 が入室しました
+  </div>
+
+</section>
+
+<!-- CHAPTER 8 -->
+<section class="chapter">
+
+  <div class="chapter-number">Chapter 8</div>
+
+  <h2>Letter</h2>
+
+  <div class="envelope-wrap">
+
+    <div class="envelope" id="envelopeBtn">
+      ✉
+    </div>
+
+    <div class="letter hidden" id="letter">
+
+      【ここに本文全文を挿入】
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CHAPTER 9 -->
+<section class="chapter chapter-center">
+
+  <div class="chapter-number">Chapter 9</div>
+
+  <h2>Promise</h2>
+
+  <div class="story-text">
+    <p>遠くからでもいい</p>
+    <p>見守っててくれ</p>
+
+    <br>
+
+    <p>僕がPalmuで覇権を握るその日を</p>
+  </div>
+
+</section>
+
+<!-- CHAPTER 10 -->
+<section class="chapter ending">
+
+  <div class="ending-text">
+    <p>見ろよ</p>
+    <br>
+    <p>あの頃の約束どおりだぞ</p>
+  </div>
+
+</section>
+
+<!-- ENDROLL -->
+<footer class="footer">
+
+  <h2>May's Monthly MVP</h2>
+
+  <p>For Karage</p>
+
+  <p>May 2026</p>
+
+  <br>
+
+  <p>天下無双の傾奇者</p>
+
+  <h3>かいちょ^_^</h3>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
