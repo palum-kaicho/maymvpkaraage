@@ -1,23 +1,48 @@
 // script.js
 
+const bgm = document.getElementById("bgm");
+const musicBtn = document.getElementById("musicBtn");
+const notification = document.getElementById("notification");
+const envelopeSe = document.getElementById("envelopeSe");
+
+setTimeout(()=>{
+
+  notification?.play();
+
+},2000);
+
+musicBtn.addEventListener("click",()=>{
+
+  bgm.volume = 0.5;
+
+  bgm.play();
+
+  musicBtn.style.opacity = .3;
+
+});
+
 const observer = new IntersectionObserver((entries)=>{
 
-entries.forEach((entry)=>{
+  entries.forEach(entry=>{
 
-```
-if(entry.isIntersecting){
-  entry.target.classList.add("show");
-}
-```
+    if(entry.isIntersecting){
 
-});
+      entry.target.classList.add("show");
+
+    }
+
+  });
 
 },{
-threshold:0.15
+  threshold:.25
 });
 
-document.querySelectorAll(".fade-section").forEach((el)=>{
-observer.observe(el);
+document.querySelectorAll(
+".text-section,.image-section,.single-line,.final-message"
+).forEach(el=>{
+
+  observer.observe(el);
+
 });
 
 const canvas = document.getElementById("particles");
@@ -25,8 +50,8 @@ const ctx = canvas.getContext("2d");
 
 function resize(){
 
-canvas.width = innerWidth;
-canvas.height = innerHeight;
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
 
 }
 
@@ -36,53 +61,49 @@ window.addEventListener("resize",resize);
 
 const particles = [];
 
-for(let i=0;i<70;i++){
+for(let i=0;i<80;i++){
 
-particles.push({
+  particles.push({
 
-```
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-size:Math.random()*2+1,
-speed:Math.random()*0.2+0.05,
-opacity:Math.random()*0.6
-```
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    size:Math.random()*2+1,
+    speed:Math.random()*.3+.05,
+    opacity:Math.random()
 
-});
+  });
 
 }
 
 function animate(){
 
-ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
 
-particles.forEach((p)=>{
+  particles.forEach(p=>{
 
-```
-ctx.beginPath();
+    ctx.beginPath();
 
-ctx.fillStyle=`rgba(255,220,120,${p.opacity})`;
+    ctx.fillStyle=`rgba(255,225,120,${p.opacity})`;
 
-ctx.shadowBlur=12;
-ctx.shadowColor="#ffe08a";
+    ctx.shadowBlur=20;
+    ctx.shadowColor="#ffe7a3";
 
-ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
 
-ctx.fill();
+    ctx.fill();
 
-p.y -= p.speed;
+    p.y -= p.speed;
 
-if(p.y < 0){
+    if(p.y < 0){
 
-  p.y = canvas.height;
-  p.x = Math.random()*canvas.width;
+      p.y = canvas.height;
+      p.x = Math.random()*canvas.width;
 
-}
-```
+    }
 
-});
+  });
 
-requestAnimationFrame(animate);
+  requestAnimationFrame(animate);
 
 }
 
