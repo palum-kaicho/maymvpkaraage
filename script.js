@@ -1,33 +1,40 @@
-
 const bgm = document.getElementById("bgm");
 const musicBtn = document.getElementById("musicBtn");
 const notificationAudio = document.getElementById("notification");
 
-setTimeout(()=>{
+window.addEventListener("load",()=>{
 
-  if(notificationAudio){
+  setTimeout(()=>{
 
-    notificationAudio.volume = 0.7;
+    if(notificationAudio){
 
-    notificationAudio.play().catch(()=>{});
+      notificationAudio.volume = 0.7;
 
-  }
+      notificationAudio.play().catch(()=>{});
 
-},2000);
+    }
+
+  },2000);
+
+});
 
 musicBtn.addEventListener("click", async ()=>{
 
   try{
 
-    bgm.volume = 0.45;
+    bgm.currentTime = 0;
+
+    bgm.volume = 0.5;
 
     await bgm.play();
 
     musicBtn.innerText = "BGM PLAYING";
 
-    musicBtn.style.opacity = .45;
+    musicBtn.style.opacity = .5;
 
   }catch(err){
+
+    alert("bgm.mp3 が読み込めてない可能性があります");
 
     console.log(err);
 
@@ -48,7 +55,7 @@ const observer = new IntersectionObserver((entries)=>{
   });
 
 },{
-  threshold:.2
+  threshold:.15
 });
 
 document.querySelectorAll(
@@ -75,15 +82,15 @@ window.addEventListener("resize",resize);
 
 const particles = [];
 
-for(let i=0;i<65;i++){
+for(let i=0;i<50;i++){
 
   particles.push({
 
     x:Math.random()*canvas.width,
     y:Math.random()*canvas.height,
-    size:Math.random()*2+1,
-    speed:Math.random()*.25+.03,
-    opacity:Math.random()*.8
+    size:Math.random()*2+0.5,
+    speed:Math.random()*0.2+0.03,
+    opacity:Math.random()*0.7
 
   });
 
@@ -99,7 +106,7 @@ function animate(){
 
     ctx.fillStyle=`rgba(255,225,140,${p.opacity})`;
 
-    ctx.shadowBlur=18;
+    ctx.shadowBlur=15;
     ctx.shadowColor="#ffe9a8";
 
     ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
