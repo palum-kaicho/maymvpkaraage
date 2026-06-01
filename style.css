@@ -14,10 +14,13 @@ html{
 
 body{
   background:#020202;
-  color:#f4f1ea;
+  color:#f8f8f6;
   font-family:'Noto Serif JP',serif;
   overflow-x:hidden;
-  letter-spacing:.04em;
+
+  letter-spacing:.015em; /* ← 狭くした */
+
+  font-weight:300;
 }
 
 canvas{
@@ -98,8 +101,8 @@ canvas{
 }
 
 .opening-title h1{
-
-  font-size:clamp(3.5rem,10vw,8rem);
+  font-size:clamp(2.8rem,9vw,7rem);
+}
   font-weight:200;
 
   background:linear-gradient(
@@ -177,14 +180,14 @@ canvas{
 
   text-align:center;
 
-  font-size:clamp(1.2rem,3vw,2rem);
+  font-size:clamp(1.15rem,3vw,1.9rem);
 
-  line-height:2.5;
+  line-height:2.15; /* ← 狭くした */
 
   opacity:0;
-  transform:translateY(40px);
+  transform:translateY(30px);
 
-  transition:2s;
+  transition:1.8s;
 }
 
 .text-section.show p{
@@ -272,7 +275,8 @@ canvas{
 .final-message{
 
   flex-direction:column;
-  gap:40px;
+
+  gap:18px; /* ← 狭くした */
 }
 
 .final-message p{
@@ -285,9 +289,14 @@ canvas{
   transition:2s;
 }
 
-.final-message.show p{
-  opacity:1;
-  transform:none;
+.final-message{
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:18px;
 }
 
 .ending{
@@ -326,9 +335,28 @@ canvas{
   margin-bottom:30px;
 }
 
-.footer h3{
-  margin-top:20px;
-  font-size:2rem;
+.footer .karage{
+
+  font-size:clamp(3rem,10vw,7rem);
+
+  margin-top:40px;
+
+  font-weight:700;
+
+  background:linear-gradient(
+  90deg,
+  #8b6a2f,
+  #fff1b8,
+  #fff8dc,
+  #fff1b8,
+  #8b6a2f
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  text-shadow:
+  0 0 30px rgba(255,230,160,.2);
 }
 
 @media(max-width:768px){
