@@ -1,285 +1,290 @@
-<!-- index.html の文章部分だけ差し替え -->
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>May's Monthly MVP</title>
 
-<!-- CHAPTER 1 -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<section class="chapter chapter-center fade-section">
+<body>
 
-  <div class="story-block">
+<audio id="bgm" loop>
+  <source src="bgm.mp3" type="audio/mpeg">
+</audio>
 
-```
-<p>
-  パルムで配信活動を始めてまだ<br>
-  2カ月も経ちませんが過去11年の中で<br>
-  最も内容の濃い月だと感じました。
-</p>
-```
+<audio id="notification">
+  <source src="notification.mp3" type="audio/mpeg">
+</audio>
 
+<audio id="envelopeSe">
+  <source src="envelope.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="particles"></canvas>
+
+<div class="overlay"></div>
+
+<!-- OPENING -->
+
+<section class="opening">
+
+  <div class="notification" id="openingNotification">
+    <span class="status"></span>
+    からあげ棒があそびにきました
   </div>
+
+  <div class="opening-title">
+    <h1>May's Monthly MVP</h1>
+    <p>Thank you for coloring my May.</p>
+  </div>
+
+  <button id="musicBtn">BGM PLAY</button>
 
 </section>
 
-<!-- IMAGE -->
+<!-- STORY -->
+
+<section class="chapter text-section">
+
+  <p>
+    パルムで配信活動を始めてまだ<br>
+    2カ月も経ちませんが過去11年の中で<br>
+    最も内容の濃い月だと感じました。
+  </p>
+
+</section>
 
 <section class="chapter image-section">
 
-  <div class="image-wrap">
-    <img src="mvp5.webp">
-  </div>
+  <img src="mvp5.webp">
 
 </section>
 
-<!-- CHAPTER 2 -->
+<section class="chapter text-section">
 
-<section class="chapter chapter-center fade-section">
-
-  <div class="story-block">
-
-```
-<p>
-  そしてその濃い月を最も彩ってくれたのが<br>
-  から揚げちゃんです。
-</p>
-```
-
-  </div>
+  <p>
+    そしてその濃い月を最も彩ってくれたのが<br>
+    から揚げちゃんです。
+  </p>
 
 </section>
 
-<!-- CHAPTER 3 -->
+<section class="chapter text-section dark">
 
-<section class="chapter chapter-center fade-section dark-section">
-
-  <div class="story-block long-text">
-
-```
-<p>
-  手を抜いてたつもりは１ミリもないんだ<br>
-  でもからあげちゃん個人にフォーカスしたときに<br>
-  もっとできることがあったんじゃないか
-</p>
-
-<br><br>
-
-<p>
-  枠を巻き込むエンタメじゃなくて<br>
-  もっとリスナー一人一人と向き合う機会を<br>
-  つくるべきだったんじゃないか
-</p>
-
-<br><br>
-
-<p>
-  ほんとはわかってるんだ<br>
-  努力量の問題じゃない<br>
-  配信の質じゃない
-</p>
-
-<br><br>
-
-<p class="big-line">
-  コンテンツ負けだってことわ
-</p>
-```
-
-  </div>
+  <p>
+    手を抜いてたつもりは１ミリもないんだ
+  </p>
 
 </section>
 
-<!-- CHAPTER 4 -->
+<section class="chapter text-section dark">
 
-<section class="chapter chapter-center fade-section">
-
-  <div class="story-block">
-
-```
-<p>
-  でも僕にはエンタメしかない<br>
-  エンタメしかできない
-</p>
-
-<br><br>
-
-<p>
-  もっと面白く<br>
-  他のコンテンツを寄せ付けない<br>
-  圧倒的なエンタメ力で<br>
-  リスナーを魅了する
-</p>
-
-<br><br>
-
-<p>
-  今まで以上に血のにじむ努力をする
-</p>
-
-<br><br>
-
-<p class="big-line">
-  絶対勝つよ。エンタメ一本で。
-</p>
-```
-
-  </div>
+  <p>
+    でもからあげちゃん個人にフォーカスしたときに<br>
+    もっとできることがあったんじゃないか
+  </p>
 
 </section>
 
-<!-- CHAPTER 5 -->
+<section class="chapter text-section dark">
 
-<section class="chapter return-scene">
+  <p>
+    枠を巻き込むエンタメじゃなくて<br>
+    もっとリスナー一人一人と向き合う機会を<br>
+    つくるべきだったんじゃないか
+  </p>
 
-  <div class="popup climax">
-    <span class="dot"></span>
+</section>
+
+<section class="chapter text-section dark">
+
+  <p>
+    ほんとはわかってるんだ<br><br>
+
+    努力量の問題じゃない<br>
+    配信の質じゃない<br><br>
+
+    コンテンツ負けだってことわ
+  </p>
+
+</section>
+
+<section class="chapter text-section emphasis">
+
+  <p>
+    でも僕にはエンタメしかない<br>
+    エンタメしかできない
+  </p>
+
+</section>
+
+<section class="chapter text-section">
+
+  <p>
+    もっと面白く<br>
+    他のコンテンツを寄せ付けない<br>
+    圧倒的なエンタメ力で<br>
+    リスナーを魅了する
+  </p>
+
+</section>
+
+<section class="chapter text-section">
+
+  <p>
+    今まで以上に血のにじむ努力をする
+  </p>
+
+</section>
+
+<section class="chapter text-section promise">
+
+  <p>
+    絶対勝つよ。エンタメ一本で。
+  </p>
+
+</section>
+
+<section class="chapter text-section">
+
+  <p>
+    からあげちゃんも最初同じ思いだったよね
+  </p>
+
+</section>
+
+<!-- RETURN -->
+
+<section class="chapter return">
+
+  <div class="notification climax">
+    <span class="status"></span>
     からあげ棒があそびにきました
   </div>
 
 </section>
 
-<!-- CHAPTER 6 -->
+<section class="chapter text-section">
 
-<section class="chapter chapter-center fade-section">
-
-  <div class="story-block">
-
-```
-<p>
-  からあげちゃんも最初同じ思いだったよね
-</p>
-
-<br><br>
-
-<p>
-  コメント欄に表示された<br>
-  「からあげ棒」の入室エフェクト
-</p>
-
-<br><br>
-
-<p>
-  もう二度と見れないと思ってたものが見れた<br>
-  その瞬間 5月の記憶が一気に押し寄せた
-</p>
-```
-
-  </div>
+  <p>
+    コメント欄に表示された<br>
+    「からあげ棒」の入室エフェクト
+  </p>
 
 </section>
 
-<!-- CHAPTER 7 -->
+<section class="chapter text-section">
 
-<section class="chapter chapter-center fade-section dark-section">
-
-  <div class="story-block">
-
-```
-<p>嬉しかったことも、</p>
-
-<br>
-
-<p>苦しかったことも、</p>
-
-<br>
-
-<p>支えられたことも。</p>
-
-<br><br><br>
-
-<p>全部ひっくるめて。</p>
-
-<br><br><br>
-
-<p class="big-line">
-  だから涙が出た。
-</p>
-```
-
-  </div>
+  <p>
+    もう二度と見れないと思ってたものが見れた<br>
+    その瞬間 5月の記憶が一気に押し寄せた
+  </p>
 
 </section>
 
-<!-- CHAPTER 8 -->
+<section class="chapter text-section">
 
-<section class="chapter chapter-center fade-section">
-
-  <div class="story-block">
-
-```
-<p>
-  もう二度と見れないと思ってた<br>
-  「からあげ棒があそびにきました」
-</p>
-
-<br><br>
-
-<p>
-  5月という濃密な時間そのものの<br>
-  象徴だった人を、もう一度見れた
-</p>
-
-<br><br>
-
-<p>
-  『あの時間は本当にあったんだ』<br>
-  って再確認させてくれる出来事だった
-</p>
-```
-
-  </div>
+  <p>
+    嬉しかったことも、<br>
+    苦しかったことも、<br>
+    支えられたことも。
+  </p>
 
 </section>
 
-<!-- CHAPTER 9 -->
+<section class="chapter single-line">
 
-<section class="chapter chapter-center fade-section">
-
-  <div class="story-block">
-
-```
-<p>
-  濃い時間を共有したリスナーは、<br>
-  離れたあとも物語から消えるわけじゃない。
-</p>
-
-<br><br><br>
-
-<p>
-  遠くからでもいい
-</p>
-
-<br>
-
-<p>
-  見守っててくれ
-</p>
-
-<br><br>
-
-<p class="big-line">
-  僕がPalmuで覇権を握るその日を。
-</p>
-```
-
-  </div>
+  <h2>全部ひっくるめて。</h2>
 
 </section>
 
-<!-- ENDING -->
+<section class="chapter single-line tears">
+
+  <h2>だから涙が出た。</h2>
+
+</section>
+
+<section class="chapter text-section">
+
+  <p>
+    もう二度と見れないと思ってた<br>
+    「からあげ棒があそびにきました」
+  </p>
+
+</section>
+
+<section class="chapter text-section">
+
+  <p>
+    5月という濃密な時間そのものの<br>
+    象徴だった人を、もう一度見れた
+  </p>
+
+</section>
+
+<section class="chapter text-section">
+
+  <p>
+    『あの時間は本当にあったんだ』<br>
+    って再確認させてくれる出来事だった
+  </p>
+
+</section>
+
+<section class="chapter text-section">
+
+  <p>
+    濃い時間を共有したリスナーは、<br>
+    離れたあとも物語から消えるわけじゃない。
+  </p>
+
+</section>
+
+<section class="chapter final-message">
+
+  <p>
+    遠くからでもいい
+  </p>
+
+  <p>
+    見守っててくれ
+  </p>
+
+  <p>
+    僕がPalmuで覇権を握るその日を。
+  </p>
+
+</section>
 
 <section class="chapter ending">
 
-  <div class="ending-text">
-
-```
-<p>
-  「見ろよ、あの頃の約束どおりだぞ」
-</p>
-
-<br><br>
-
-<p>
-  って胸を張れるような景色を見せたい。
-</p>
-```
-
-  </div>
+  <p>
+    「見ろよ、あの頃の約束どおりだぞ」<br>
+    って胸を張れるような景色を見せたい。
+  </p>
 
 </section>
+
+<footer class="footer">
+
+  <h2>May's Monthly MVP</h2>
+
+  <p>For Karage</p>
+
+  <p>May 2026</p>
+
+  <br>
+
+  <p>天下無双の傾奇者</p>
+
+  <h3>かいちょ^_^</h3>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
