@@ -105,8 +105,9 @@ canvas{
 }
 
 .opening-title h1{
+
   font-size:clamp(2.8rem,9vw,7rem);
-}
+
   font-weight:200;
 
   background:linear-gradient(
@@ -385,4 +386,4 @@ canvas{
   transform:translateY(18px);
 
   transition:1.2s;
-}
+}}
